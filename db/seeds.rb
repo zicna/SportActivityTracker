@@ -129,33 +129,32 @@ users.map do |user|
     end
 end
 
-# trening_sessions.map do |trening|
-#     TreningSession.find_or_create_by(user_id: trening[:user_id], date: trening[:date], start_time: trening[:start_time]) do |t|
-#         t.user_id = trening[:user_id]
-#         t.date = trening[:date]
-#         t.start_time = trening[:start_time]
-#         t.duration = trening[:duration]
-#         t.activity_type = trening[:activity_type]
-#         t.distance = trening[:distance]
-#         t.note = trening[:note]
-#         t.feeling = trening[:feeling]
-#     end
-# end
+trening_sessions.map do |trening|
+    TreningSession.find_or_create_by(user_id: trening[:user_id], start_time: trening[:start_time]) do |t|
+        t.user_id = trening[:user_id]
+        t.start_time = trening[:start_time]
+        t.duration = trening[:duration]
+        t.activity_type = trening[:activity_type]
+        t.distance = trening[:distance]
+        t.note = trening[:note]
+        t.feeling = trening[:feeling]
+    end
+end
 
 
 
-# weight_goal.map do |goal|
-#     WeightGoal.find_or_create_by(user_id: goal[:user_id]) do |g|
-#         g.user_id = goal[:user_id]
-#         g.goal = goal[:goal]
-#     end
-# end
+weight_goal.map do |goal|
+    WeightGoal.find_or_create_by(user_id: goal[:user_id]) do |g|
+        g.user_id = goal[:user_id]
+        g.goal = goal[:goal]
+    end
+end
 
-# weights.map do |weight|
-#     Weight.find_or_create_by(user_id: weight[:user_id], time: weight[:time]) do |w|
-#         w.user_id = weight[:user_id]
-#         w.weight_value = weight[:weight_value]
-#         w.time = weight[:time]
-#     end
-# end
+weights.map do |weight|
+    Weight.find_or_create_by(user_id: weight[:user_id], time: weight[:time]) do |w|
+        w.user_id = weight[:user_id]
+        w.weight_value = weight[:weight_value]
+        w.time = weight[:time]
+    end
+end
 
