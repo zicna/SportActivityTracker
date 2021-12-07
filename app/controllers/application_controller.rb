@@ -1,5 +1,9 @@
 class ApplicationController < ActionController::API
-    private 
+
+    include ActionController::Cookies
+
+
+private 
 
   def options
     {
