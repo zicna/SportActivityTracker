@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::API
 
+  # *Since all of our controllers inherit from ApplicationController,
+  # *adding this module here means all of our controllers will be able to work with cookies.
     include ActionController::Cookies
 
 

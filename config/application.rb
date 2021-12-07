@@ -22,10 +22,11 @@ Bundler.require(*Rails.groups)
 module Backend
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
+    config.load_defaults 6.1
+# * This will add in the necessary middleware (Links to an external site.) for working with sessions and cookies in our application.
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore
     config.action_dispatch.cookies_same_site_protection = :strict
-    config.load_defaults 6.1
 
     # Configuration for the application, engines, and railties goes here.
     #
